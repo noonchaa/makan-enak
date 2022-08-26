@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Footer from "./footer"
 
 const Layout = ({ children, title, desc }) => {
     return (
@@ -10,6 +11,7 @@ const Layout = ({ children, title, desc }) => {
             <main className="w-full min-h-screen bg-gray-200 dark:bg-gray-700">
                 {children}
             </main>
+            <Footer/>
         </>
     )
 }

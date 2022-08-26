@@ -1,19 +1,25 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Card = ({ content }) => {
     return (
-        <div className="max-w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-            <div className="w-full h-56 relative">
-                <Image src={content.thumb} layout={'fill'} objectFit='cover' objectPosition={'center'} alt={content.key} />
-            </div>
-            {/* <img className="object-cover object-center w-full h-56" src={content.thumb} alt="avatar" /> */}
+        <div className="w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <Link href={'/resep/' + content.key}>
+                <a>
+                    <div className="w-full h-56 relative">
+                        <Image src={content.thumb} layout={'fill'} objectFit='cover' objectPosition={'center'} alt={content.key} />
+                    </div>
+                </a>
+            </Link>
 
             <div className="flex items-center px-6 py-3 bg-gray-900">
                 <h1 className="text-lg font-semibold text-white">{content.difficulty}</h1>
             </div>
 
             <div className="px-6 py-4">
-                <h1 className="text-xl font-semibold text-gray-800 dark:text-white">{content.title}</h1>
+                <Link href={'/resep/' + content.key}>
+                    <a className="text-xl font-semibold text-gray-800 dark:text-white">{content.title}</a>
+                </Link>
 
                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
