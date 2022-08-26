@@ -38,7 +38,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 const Resep = ({ category, resep ,masak}) => {
-    console.log(resep)
 
     return (
         <Layout title={resep?.title} desc={resep?.desc}>
