@@ -13,7 +13,7 @@ export const getStaticPaths = async () => {
 
     return {
         paths: path,
-        fallback: blocking
+        fallback: 'blocking'
     }
 }
 
